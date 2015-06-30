@@ -4,6 +4,7 @@ var fs = require('fs');
 var cheerio = require('cheerio');
 var cleanCss = require('clean-css');
 var opener = require("opener");
+var utf8 = require('to-utf8');
 var htmlFile = process.argv[2] || 'index.html';
 
 fs.readFile(htmlFile, function(err, data) {
@@ -11,7 +12,7 @@ fs.readFile(htmlFile, function(err, data) {
         console.error('警告：你没有指定需要编译的html文件，在' + __dirname + '下也没有找着默认的目标文件index.html');
         return false;;
     }
-    var $ = cheerio.load(data.toString());
+    var $ = cheerio.load(data.toString(),{decodeEntities: false});
 
     var cssPath = $('link').attr('href');
 
@@ -23,7 +24,7 @@ fs.readFile(htmlFile, function(err, data) {
     readCss(cssPath, function(err,data) {
         var cssMap = data;
 		var src = __dirname + '/parsing.html';
-        console.log(err);
+
 		if(err){
 			console.error('404 ! not found '+cssPath);
 			return false;
@@ -38,7 +39,8 @@ fs.readFile(htmlFile, function(err, data) {
 
         $('link').remove();
 
-        var _html = $.html().replace(/\&quot\;/g, '"').replace(/\&apos\;/g, "'").replace(/\&amp\;/g, '&');
+        var _html = $.html()
+
 
         fs.writeFile(src, _html, function(err) {
             if (err) throw err;
