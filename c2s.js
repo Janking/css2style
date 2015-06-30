@@ -22,7 +22,7 @@ fs.readFile(htmlFile, function(err, data) {
 
     readCss(cssPath, function(err,data) {
         var cssMap = data;
-		var src = __dirname + '/parsing.html';
+		var src = './parsing.html';
 
 		if(err){
 			console.error('404 ! not found '+cssPath);
@@ -38,8 +38,7 @@ fs.readFile(htmlFile, function(err, data) {
 
         $('link').remove();
 
-        var _html = $.html()
-
+        var _html = $.html().toString();
 
         fs.writeFile(src, _html, function(err) {
             if (err) throw err;
