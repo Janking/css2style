@@ -13,5 +13,6 @@
 
 ```shell
 > cts 目标.html文件
+//cts命令:css to style的缩写
 //如果没有目标.html文件，会在当前目录下寻找index.html
 ```

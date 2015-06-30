@@ -23,7 +23,7 @@ fs.readFile(htmlFile, function(err, data) {
     readCss(cssPath, function(err,data) {
         var cssMap = data;
 		var src = __dirname + '/parsing.html';
-
+        console.log(err);
 		if(err){
 			console.error('404 ! not found '+cssPath);
 			return false;
@@ -64,6 +64,6 @@ function readCss(src, callback) {
             if (/\:hover|\:active|\:link|\:visited/.test(_name)) return;
             map[_name] = _value;
         });
-        callback.call(this, map);
+        callback.call(this, err,map);
     });
 }

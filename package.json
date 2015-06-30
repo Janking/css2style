@@ -1,6 +1,6 @@
 {
     "name": "css2style",
-    "version": "1.0.6",
+    "version": "1.0.8",
     "description": "compile rules of cssFile to html inline style",
     "main": "index.js",
     "keywords": [
@@ -15,6 +15,10 @@
         "cheerio": "^0.19.0",
         "clean-css": "^3.3.4",
         "opener": "^1.4.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Janking/css2style"
     },
     "devDependencies": {
         "cheerio": "^0.19.0",
