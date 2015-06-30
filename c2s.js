@@ -4,7 +4,6 @@ var fs = require('fs');
 var cheerio = require('cheerio');
 var cleanCss = require('clean-css');
 var opener = require("opener");
-var utf8 = require('to-utf8');
 var htmlFile = process.argv[2] || 'index.html';
 
 fs.readFile(htmlFile, function(err, data) {
