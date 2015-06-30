@@ -1,0 +1,11 @@
+ div{
+  width: 86px;
+  font-size:30px;
+  font-weight: bold;
+  font-family:'Microsoft Yahei';
+  background-image:url('http://www.baidu.com?t=xx&hello=aaa');
+  color: #fff;
+  text-align: center;
+  line-height: 36px;
+  padding: 7px 0;
+}

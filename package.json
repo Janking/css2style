@@ -1,0 +1,24 @@
+{
+    "name": "css2style",
+    "version": "1.0.6",
+    "description": "compile rules of cssFile to html inline style",
+    "main": "index.js",
+    "keywords": [
+        "css2style"
+    ],
+    "bin": {
+        "cts": "c2s.js"
+    },
+    "author": "Janking",
+    "license": "MIT",
+    "dependencies": {
+        "cheerio": "^0.19.0",
+        "clean-css": "^3.3.4",
+        "opener": "^1.4.1"
+    },
+    "devDependencies": {
+        "cheerio": "^0.19.0",
+        "clean-css": "^3.3.4",
+        "opener": "^1.4.1"
+    }
+}
